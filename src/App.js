@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import "./App.css";
+import React from "react";
+import Controller from "./components/Controller";
+import TrackList from "./components/TrackList";
+import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <MusicPlayerProvider>
+        <div className="container trackBox">
+          <TrackList />
+          <Controller />
+        </div>
+      </MusicPlayerProvider>
+    </Box>
   );
 }
 
