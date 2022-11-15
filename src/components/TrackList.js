@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-distracting-elements */
-import { PauseCircle } from "@mui/icons-material";
+import { PauseCircle, Headphones } from "@mui/icons-material";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import "../App.css";
@@ -33,10 +33,21 @@ function TrackList() {
             key={index}
             onClick={() => playTrack(index)}
           >
-            <PauseCircle
+            {track.name === currentTrackName && isPlaying ? (
+              <PauseCircle
+                size="small"
+                sx={{ marginRight: "10px", color: "gray" }}
+              />
+            ) : (
+              <Headphones
+                size="small"
+                sx={{ marginRight: "10px", color: "gray" }}
+              />
+            )}
+            {/* <PauseCircle
               size="small"
               sx={{ marginRight: "10px", color: "gray" }}
-            />
+            /> */}
 
             <Typography
               fontSize={10}
